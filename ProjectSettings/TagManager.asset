@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Level
   layers:
   - Default
   - TransparentFX
@@ -43,4 +44,7 @@ TagManager:
     locked: 0
   - name: BG
     uniqueID: 3236218311
+    locked: 0
+  - name: Player
+    uniqueID: 1569804307
     locked: 0
