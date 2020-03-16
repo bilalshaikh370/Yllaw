@@ -35,6 +35,8 @@ public class PlayerController : MonoBehaviour
         Animation = GetComponent<Animator>();
     }
 
+  
+
     // Physics
     void FixedUpdate()
     {
@@ -86,5 +88,13 @@ public class PlayerController : MonoBehaviour
         transform.localScale = temp;
 
         isFacingRight = !isFacingRight;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.gameObject.CompareTag("Coins"))
+        {
+            Destroy(other.gameObject);
+        }
     }
 }
