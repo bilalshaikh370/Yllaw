@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -17,6 +18,15 @@ public class PlayerController : MonoBehaviour
     private Animator Animation;
     private bool isFacingRight = true;
     private bool isCrouching = false;
+
+
+    private void OnCollision2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "Enemy")
+        {
+            SceneManager.LoadScene("EndScene");
+        }
+    }
 
     // Start is called before the first frame update
     void Start()

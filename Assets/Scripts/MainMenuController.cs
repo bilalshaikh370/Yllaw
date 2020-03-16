@@ -6,7 +6,7 @@ public class MainMenuController : MonoBehaviour
 {
     public void StartGame()
     {
-         SceneManager.LoadScene("Level1");
+         SceneManager.LoadScene("Level0");
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);    
     }
     public void QuitGame()
@@ -21,8 +21,21 @@ public class MainMenuController : MonoBehaviour
 
 
     }
+
+    public void ToLevel1()
+    {
+        SceneManager.LoadScene("Level1");
+    }
 public void GameOver()
     {
         SceneManager.LoadScene("MainMenu");
     }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            SceneManager.LoadScene("ToLevel1");
+        }
+    }
+   
 }

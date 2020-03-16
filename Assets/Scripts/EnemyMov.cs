@@ -1,14 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemyMov : MonoBehaviour
 {
     public float speed;
     public float distance;
-
+    public LayerMask whatIsGround;
     private bool movingRight = true;
     public Transform groundDetection;
+
 
     void Update()
     {
@@ -29,5 +31,15 @@ public class EnemyMov : MonoBehaviour
             }
         }
 
+       
+        
     }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Player")
+       {
+            SceneManager.LoadScene("EndScene");
+        }
+    }
+   
 }
