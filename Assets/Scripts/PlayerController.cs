@@ -11,6 +11,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform groundCheckPos;
     [SerializeField] private LayerMask whatIsGround;
     [SerializeField] private float groundCheckRadius = 0.15f;
+  
+
+   
 
     // Private variables
     private bool isGrounded = false;
@@ -26,7 +29,11 @@ public class PlayerController : MonoBehaviour
         {
             SceneManager.LoadScene("EndScene");
         }
+
     }
+    
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -39,9 +46,14 @@ public class PlayerController : MonoBehaviour
 
     // Physics
     void FixedUpdate()
+
     {
+     
+        
+        
         Vector2 movement = Vector2.zero;
         float horiz = Input.GetAxis("Horizontal");
+
 
         isGrounded = GroundCheck();
 
@@ -51,7 +63,7 @@ public class PlayerController : MonoBehaviour
             rBody.AddForce(new Vector2(0.0f, jumpForce));
             isGrounded = false;
         }
-
+        
         rBody.velocity = new Vector2(horiz * speed, rBody.velocity.y);
 
        
@@ -96,5 +108,12 @@ public class PlayerController : MonoBehaviour
         {
             Destroy(other.gameObject);
         }
+        if (other.tag == "Collider")
+        {
+            SceneManager.LoadScene("EndScene");
+        }
+       
+
     }
+
 }
