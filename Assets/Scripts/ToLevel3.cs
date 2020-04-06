@@ -3,16 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Lvel1to2 : MonoBehaviour
+public class ToLevel3 : MonoBehaviour
 {
-   
     private void OnTriggerEnter2D(Collider2D other)
 
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            SceneManager.LoadScene("ToLevel1");
+            SceneManager.LoadScene("ToLevel2");
         }
-        
+
     }
 }
