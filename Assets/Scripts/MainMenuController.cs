@@ -21,6 +21,11 @@ public class MainMenuController : MonoBehaviour
 
 
     }
+    public void ToLevel2()
+    {
+        SceneManager.LoadScene("LevelLast");
+    }
+
 
     public void ToLevel1()
     {
