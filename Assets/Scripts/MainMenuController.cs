@@ -34,7 +34,7 @@ public void GameOver()
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            SceneManager.LoadScene("ToLevel1");
+            SceneManager.LoadScene("MainMenu");
         }
     }
    

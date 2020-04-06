@@ -34,12 +34,17 @@ public class EnemyMov : MonoBehaviour
        
         
     }
+   
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Player")
        {
             SceneManager.LoadScene("EndScene");
         }
+       
     }
-   
+    public void die()
+    {
+        Destroy(this.gameObject);
+    }
 }

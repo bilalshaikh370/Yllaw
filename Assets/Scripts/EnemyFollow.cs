@@ -42,7 +42,7 @@ public class EnemyFollow : MonoBehaviour
 
         if(transform.position.x == trgt.x && transform.position.y == trgt.y)
         {
-            DestroyProjectile();
+            Die();
         }
 
         if (shotTime <= 0)
@@ -65,17 +65,10 @@ public class EnemyFollow : MonoBehaviour
 
         isFacingRight = !isFacingRight;
     }
-    private void OnTriggerEnter2D(Collider2D other)
+  
+    public void Die()
     {
-        if (other.CompareTag("Player"))
-        {
-            DestroyProjectile();
-        }
-
-    }
-    public void DestroyProjectile()
-    {
-        Destroy(gameObject);
+        Destroy(this.gameObject);
     }
 
 }
