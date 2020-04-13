@@ -35,6 +35,10 @@ public void GameOver()
     {
         SceneManager.LoadScene("MainMenu");
     }
+    public void ToInstruction()
+    {
+        SceneManager.LoadScene("Instruction");
+    }
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))

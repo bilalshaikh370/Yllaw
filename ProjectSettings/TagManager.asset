@@ -5,10 +5,6 @@ TagManager:
   serializedVersion: 2
   tags:
   - Level
-  - Enemy
-  - Coins
-  - Collider
-  - Platform
   layers:
   - Default
   - TransparentFX
@@ -21,7 +17,7 @@ TagManager:
   - Background
   - Map
   - Player
-  - Enemy
+  - 
   - 
   - 
   - 
@@ -48,9 +44,6 @@ TagManager:
     locked: 0
   - name: BG
     uniqueID: 3236218311
-    locked: 0
-  - name: Level
-    uniqueID: 575701341
     locked: 0
   - name: Player
     uniqueID: 1569804307
